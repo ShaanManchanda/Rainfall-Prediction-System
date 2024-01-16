@@ -1,39 +1,58 @@
-# Rainfall Prediction System
+# Rain-Prediction
+A project on predicting whether it will rain tomorrow or not by using the Rainfall in Australia dataset
+This project is tested over lot of ml models like catboost, xgboost, random forest, support vector classifier, etc..
+Out of these models catboost performed very well giving an AUC score around and ROC score of 89 far better than others.
+Here due to my system compatibility is very low. So I havent done hyperparameter tuning. But it is highly recommended to do it if possible.
 
-## Overview
-This Rainfall Prediction System is designed to enhance and improve upon previous rainfall prediction systems. Leveraging machine learning techniques, it provides accurate predictions of rainfall in various locations across Australia. The model is built on a dataset spanning a decade, offering a comprehensive understanding of weather patterns and facilitating more reliable predictions.
+# Rainy Day: 
+![Predictor Values for Rainy Day](githubimgs/predictor.png)
+# Sunny Day:
+![Predictor Values for Sunny Day](githubimgs/predictor1.png)
 
-## Dataset
-The dataset, named 'weatherAUS.csv,' provides a comprehensive set of features including temperature, humidity, wind speed, and other meteorological parameters. This dataset is valuable for training a machine learning model to predict the likelihood of rainfall on the following day.
+# Tech Stack
+* Front-End: HTML, CSS, Bootstrap
+* Back-End: Flask
+* IDE: Jupyter notebook, Pycharm
 
-## Model Improvement
-The key enhancements in this project include:
-1. **Data Preprocessing:**
-    - Handling missing data using the most frequent value for both features and the target variable.
-    - Encoding categorical variables using LabelEncoder.
-    - Standardizing features through StandardScaler to ensure consistent scale and better model performance.
-2. **Model Selection:**
-    - Utilizing a RandomForestClassifier for training the model due to its ability to handle complex relationships in data and provide robust predictions.
-3. **Evaluation:**
-    - Calculating the accuracy of the model on the test set using the accuracy_score function from scikit-learn.
+# How to run this app
+* Firstly, navigate to the directory where you want to create your virtual environment using the cd command.
+* cd path/to/your/project
+* Create a virtual environment by using this command:
+* python -m venv venv
+* Activate the environment using the below command:
+* .\venv\Scripts\activate
+* Then install all the packages by using the following command
+* pip install -r requirements.txt
+* Now for the final step. Run the app:
+* python app.py
+* Remember to deactivate the virtual environment when you're done working on your project:
+* deactivate
 
-## Model Accuracy
-The trained model achieved an accuracy of approximately 85.22% on the test set, showcasing its effectiveness in predicting rainfall.
+# Some screenshots of the app
+* Landing Page:
+![Landing Page](githubimgs/landingpage.png)
+* About Rainy Brain:
+![About](githubimgs/about.png)
+* Predictor:
+![Predictor](githubimgs/predictor.png)
+* Result:
+![Result](githubimgs/result.png)
 
-## How to Run the Model
-To run the model, follow these steps:
-1. **Clone the Repository:**
-   ```bash
-   git clone <repository_url>
-   cd <Rainfall-Prediction-System>
-2. **Install Dependencies:**
-Ensure that you have the required Python libraries installed. You can use the following command:
-   ```bash
-   pip install numpy pandas scikit-learn
-3. **Run the Jupyter Notebook:**
-Open the Jupyter Notebook in your preferred environment and run each cell sequentially. Ensure that the 'weatherAUS.csv' dataset is in the same directory as the notebook.
-4. **Interpret Results:**
-After running the notebook, you will see the model's accuracy on the test set and a DataFrame containing the actual and predicted rainfall labels.
+# Data Collection: 
+[Rainfall Prediction in Australia dataset](https://www.kaggle.com/jsphyg/weather-dataset-rattle-package) from Kaggle
+# Data Preprocessing: 
+* Missing Values Handled by Random Sample imputation to maintain the variance
+* Categorical Values like location, wind direction are handled by using Target guided encoding
+* Outliers are handled using IQR and boxplot
+* Feature Selection and was done but didnt perform well it can be seen in testing_notebook/Prediction.ipynb
+* Feature Scaling didnt give a lot of difference it also can be seen in testing_notebook/RainPrediction1.ipynb
+* Imbalanced Dataset was handled using SMOTE
+# Model Creation:
+* Different types of models were tried like catboost, random forest, logistic regression, xgboost, support vector machines, knn, naive bayes.
+* Out of these catboost, random forest and support vector machines were top 3
+* The conclusion were made using classification metrics. roc curve and auc score
+# Model Deployment
+* The model is deployed using Flask.
 
-## Conclusion
-This project enhances rainfall prediction by leveraging machine learning techniques and a comprehensive dataset. The RandomForestClassifier demonstrates its capability in capturing complex patterns within the data, resulting in improved accuracy compared to previous rainfall prediction systems.
+# I am also giving my LinkedIn profile. If you want we can connect there too
+[https://www.linkedin.com/in/shaan-manchanda-808306252/](https://www.linkedin.com/in/shaan-manchanda-808306252/)
